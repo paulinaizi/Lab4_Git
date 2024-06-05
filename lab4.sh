@@ -8,7 +8,8 @@ print_today()
 
 make_logs()
 {
-	for ((i=1; i<=100; i++));
+	num=${1:-10}
+	for ((i=1; i<=$num; i++));
 	do
 		local file="log${i}.txt"
 		echo $file > $file
@@ -25,8 +26,13 @@ do
 			shift
 			;;
 		--logs)
-			make_logs
-			shift
+			if [[ -n $2 ]] && [[ $2 =~ ^[0-9]+$ ]]; then
+				make_logs $2
+				shift 2
+			else
+				make_logs
+				shift
+			fi
 			;;
 		*)
 			echo "Nieznana opcja"
