@@ -26,6 +26,13 @@ help()
 	echo -e "--help 				Wyświetla dostępne opcje."
 }
 
+init()
+{
+	git clone https://github.com/paulinaizi/Lab4_Git.git .
+	repo_path=$(pwd)
+	PATH=$PATH:$repo_path
+}
+
 while [ $# -gt 0 ]
 do
 	case "$1" in
@@ -44,6 +51,10 @@ do
 			;;
 		--help | -h)
 			help
+			shift
+			;;
+		--init)
+			init
 			shift
 			;;
 		*)
