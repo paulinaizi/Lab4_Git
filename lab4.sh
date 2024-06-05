@@ -35,9 +35,9 @@ error()
 help()
 {
 	echo "Dostępne opcje: "
-	echo -e "--date 				Wyświetla dzisiejszą datę."
-	echo -e "--logs [liczba] 	Tworzy określoną liczbę plików logx.txt, x – numer pliku, domyślna wartość liczby wynosi 100"
-	echo -e "--help 				Wyświetla dostępne opcje."
+	echo -e "--date, -d				Wyświetla dzisiejszą datę."
+	echo -e "--logs, -l [liczba] 	Tworzy określoną liczbę plików logx.txt, x – numer pliku, domyślna wartość liczby wynosi 100"
+	echo -e "--help, -h 			Wyświetla dostępne opcje."
 }
 
 init()
