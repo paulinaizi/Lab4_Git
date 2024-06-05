@@ -29,11 +29,11 @@ help()
 while [ $# -gt 0 ]
 do
 	case "$1" in
-		--date)
+		--date | -d)
 			print_today
 			shift
 			;;
-		--logs)
+		--logs | -l)
 			if [[ -n $2 ]] && [[ $2 =~ ^[0-9]+$ ]]; then
 				make_logs $2
 				shift 2
@@ -42,7 +42,7 @@ do
 				shift
 			fi
 			;;
-		--help)
+		--help | -h)
 			help
 			shift
 			;;
