@@ -8,7 +8,7 @@ print_today()
 
 make_logs()
 {
-	num=${1:-10}
+	num=${1:-100}
 	for ((i=1; i<=$num; i++));
 	do
 		local file="log${i}.txt"
