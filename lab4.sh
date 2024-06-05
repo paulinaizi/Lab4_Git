@@ -18,6 +18,14 @@ make_logs()
 	done
 }
 
+help()
+{
+	echo "Dostępne opcje: "
+	echo -e "--date 				Wyświetla dzisiejszą datę."
+	echo -e "--logs [liczba] 	Tworzy określoną liczbę plików logx.txt, x – numer pliku, domyślna wartość liczby wynosi 100"
+	echo -e "--help 				Wyświetla dostępne opcje."
+}
+
 while [ $# -gt 0 ]
 do
 	case "$1" in
@@ -33,6 +41,10 @@ do
 				make_logs
 				shift
 			fi
+			;;
+		--help)
+			help
+			shift
 			;;
 		*)
 			echo "Nieznana opcja"
