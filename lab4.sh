@@ -35,9 +35,11 @@ error()
 help()
 {
 	echo "Dostępne opcje: "
-	echo -e "--date, -d				Wyświetla dzisiejszą datę."
-	echo -e "--logs, -l [liczba] 	Tworzy określoną liczbę plików logx.txt, x – numer pliku, domyślna wartość liczby wynosi 100"
-	echo -e "--help, -h 			Wyświetla dostępne opcje."
+	echo "--date, -d				Wyświetla dzisiejszą datę."
+	echo "--logs, -l [liczba] 		Tworzy określoną liczbę plików logx.txt, x – numer pliku, domyślna wartość liczby wynosi 100."
+	echo "--error, -e [liczba] 		Tworzy określoną liczbę plików errorx/errorx.txt, x – numer pliku, domyślna wartość liczby wynosi 100."
+	echo "--help, -h 				Wyświetla dostępne opcje."
+	echo "--init					Klonuje całe repozytorium, do katalogu w którym został uruchomiony skrypt oraz ustawia ścieżkę w zmiennej środowiskowej PATH."
 }
 
 init()
