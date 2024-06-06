@@ -18,6 +18,20 @@ make_logs()
 	done
 }
 
+error()
+{
+	num=${1:-100}
+	for ((i=1; i<=$num; i++));
+	do
+		local dir="error${i}"
+		local file="error${i}.txt"
+		mkdir $dir
+		echo $file > $dir/$file
+		echo $(basename $BASH_SOURCE) >> $dir/$file
+		print_today >> $dir/$file
+	done
+}
+
 help()
 {
 	echo "Dostępne opcje: "
@@ -46,6 +60,15 @@ do
 				shift 2
 			else
 				make_logs
+				shift
+			fi
+			;;
+		--error | -e)
+			if [[ -n $2 ]] && [[ $2 =~ ^[0-9]+$ ]]; then
+				error $2
+				shift 2
+			else
+				error
 				shift
 			fi
 			;;
